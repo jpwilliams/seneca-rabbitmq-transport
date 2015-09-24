@@ -1,6 +1,6 @@
 {
-  "name": "seneca-rabbitmq-transport",
-  "version": "0.2.1",
+  "name": "seneca-rabbitmq-transport-v2",
+  "version": "0.2.2",
   "description": "Seneca RabbitMQ transport",
   "main": "rabbitmq-transport.js",
   "scripts": {
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/senecajs/seneca-rabbitmq-transport.git"
+    "url": "git@github.com:jpwilliams/seneca-rabbitmq-transport.git"
   },
   "bugs": {
-    "url": "https://github.com/senecajs/seneca-rabbitmq-transport/issues/new"
+    "url": "https://github.com/jpwilliams/seneca-rabbitmq-transport/issues/new"
   },
   "keywords": [
     "seneca",
@@ -46,6 +46,10 @@
     {
       "name": "wprl",
       "url": "https://github.com/wprl"
+    },
+    {
+      "name": "jpwilliams",
+      "url": "https://github.com/jpwilliams"
     }
   ]
 }

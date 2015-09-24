@@ -1,7 +1,8 @@
-seneca-rabbitmq-transport
+seneca-rabbitmq-transport-v2
 ======================
 
 Seneca micro-services message transport over RabbitMQ messaging.
+Contains some updates (including message acknowledgement) as the main repo wasn't bein updated!
 
 
 ## Support
@@ -9,20 +10,21 @@ Seneca micro-services message transport over RabbitMQ messaging.
 For questions:
 [@rjrodger](http://twitter.com/rjrodger)
 [@zbangazbanga](http://twitter.com/zbangazbanga)
+[@atticjack](http://twitter.com/atticjack)
 
-Current Version: 0.2.1
+Current Version: 0.2.2
 
-Tested on: Node 0.10.31, Seneca 0.5.21
+Tested on: Node 4.1.1, Seneca 0.6.5
 
 
 ### Install
 
 ```sh
-npm install seneca-rabbitmq-transport
+npm install seneca-rabbitmq-transport-v2
 ```
 
 You'll also need [RabbitMQ](http://www.rabbitmq.com) or another server that
-implements version 0.9.1 of the [AMQP](http://www.amqp.org) protocol.
+implements version 0.9.1+ of the [AMQP](http://www.amqp.org) protocol.
 
 
 ## Quick Example
