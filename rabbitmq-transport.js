@@ -43,15 +43,15 @@ module.exports = function( options ) {
 
         tu.listen_topics( seneca, args, listen_options, function ( topic ) {
           var acttopic = topic+'_act'
+          var restopic = topic+'_res'
 
           seneca.log.debug('listen', 'subscribe', acttopic, listen_options, seneca)
 
           channel.assertQueue(acttopic)
+          channel.assertQueue(restopic)
 
           // Subscribe
           channel.consume(acttopic, on_message);
-
-          var asserted = {}
 
           function on_message ( message ) {
             var content = message.content ? message.content.toString() : undefined
@@ -63,14 +63,6 @@ module.exports = function( options ) {
             tu.handle_request( seneca, data, listen_options, function(out){
               if( null === out ) return;
               var outstr = tu.stringifyJSON( seneca, 'listen-'+type, out )
-
-              var restopic = topic+'_res'+'/'+data.origin
-
-              if (!asserted[restopic]) {
-                channel.assertQueue(restopic)
-                asserted[restopic] = true
-              }
-
               channel.sendToQueue(restopic, new Buffer(outstr));
             })
           }
@@ -108,7 +100,7 @@ module.exports = function( options ) {
 
         function make_send( spec, topic, send_done ) {
           var acttopic = topic+'_act'
-          var restopic = topic+'_res'+'/'+seneca.id
+          var restopic = topic+'_res'
 
           channel.on('error', send_done)
 
